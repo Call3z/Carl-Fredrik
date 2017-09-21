@@ -1,0 +1,54 @@
+﻿@model TentaWeb2.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StudentId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mail" class="control-label"></label>
+                <input asp-for="Mail" class="form-control" />
+                <span asp-validation-for="Mail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GitHubHomeUrl" class="control-label"></label>
+                <input asp-for="GitHubHomeUrl" class="form-control" />
+                <span asp-validation-for="GitHubHomeUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoogleAccount" class="control-label"></label>
+                <input asp-for="GoogleAccount" class="form-control" />
+                <span asp-validation-for="GoogleAccount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
